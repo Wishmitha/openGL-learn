@@ -40,6 +40,10 @@ int main(void)
 	glBindBuffer(GL_ARRAY_BUFFER, buffer);
 	glBufferData(GL_ARRAY_BUFFER, 6 * sizeof(float), postitions, GL_STATIC_DRAW);
 
+	glEnableVertexAttribArray(0); // 0 to enable
+	glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(float) * 2, 0); //only one attribute: postion
+
+
 	/* Loop until the user closes the window (Game Render Loop) */
 	while (!glfwWindowShouldClose(window))
 	{
